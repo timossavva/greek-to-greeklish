@@ -1,6 +1,6 @@
-def print_hi(name):
-    print(f'Hi, {name}')
+import js2py
 
+# js2py.translate_file('toGreeklish.js', 'toGreeklish.py')
 
-if __name__ == '__main__':
-    print_hi('pip')
+from toGreeklish import toGreeklish
+print(toGreeklish.toGreeklish('τεστ'))
