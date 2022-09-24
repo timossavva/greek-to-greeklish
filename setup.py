@@ -4,19 +4,16 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="Package Name",
-    version="0.0.1",
+    name="greek-to-greeklish",
+    version="0.0.4",
     author="Timotheos Savva",
     author_email="",
-    description="package description",
+    description="Greek Letter Transliteration based on ELOT 743 standard",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="git repo url (github, gitlab...)",
+    url="https://github.com/timossavva/greek-to-greeklish",
     packages=setuptools.find_packages(),
-    install_requires=[
-        'reportlab',
-        'pillow'
-    ],
+    install_requires=[],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
