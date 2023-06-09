@@ -1,4 +1,4 @@
-__all__ = ['toGreeklish']
+__all__ = ['greek_to_greeklish']
 
 # Don't look below, you will not understand this Python code :) I don't.
 
@@ -12,11 +12,11 @@ var.registers(['toGreeklish'])
 @Js
 def PyJsHoisted_toGreeklish_(text, this, arguments, var=var):
     var = Scope({'text':text, 'this':this, 'arguments':arguments}, var)
-    var.registers(['i', 'engLetters', 'grLetters', 'stringToSet', 'replacement', 'text', 'greekSet', 'viSet', 'grCaps', 'fixCase', 'expression', 'replacements'])
+    var.registers(['engLetters', 'replacements', 'expression', 'grCaps', 'fixCase', 'text', 'replacement', 'viSet', 'grLetters', 'greekSet', 'i', 'stringToSet'])
     @Js
     def PyJsHoisted_fixCase_(text, mirror, this, arguments, var=var):
         var = Scope({'text':text, 'mirror':mirror, 'this':this, 'arguments':arguments}, var)
-        var.registers(['text', 'mirror'])
+        var.registers(['mirror', 'text'])
         if var.get('grCaps').get(var.get('mirror').callprop('charAt', Js(0.0))):
             if ((var.get('mirror').get('length')==Js(1.0)) or var.get('grCaps').get(var.get('mirror').callprop('charAt', Js(1.0)))):
                 return var.get('text').callprop('toUpperCase')
@@ -29,7 +29,7 @@ def PyJsHoisted_toGreeklish_(text, this, arguments, var=var):
     @Js
     def PyJsHoisted_stringToSet_(s, this, arguments, var=var):
         var = Scope({'s':s, 'this':this, 'arguments':arguments}, var)
-        var.registers(['i', 'o', 's'])
+        var.registers(['s', 'o', 'i'])
         var.put('o', Js({}))
         #for JS loop
         var.put('i', Js(0.0))
@@ -77,7 +77,7 @@ def PyJsHoisted_toGreeklish_(text, this, arguments, var=var):
     @Js
     def PyJs_anonymous_0_(PyJsArg_2430_, index, this, arguments, var=var):
         var = Scope({'$0':PyJsArg_2430_, 'index':index, 'this':this, 'arguments':arguments}, var)
-        var.registers(['c2', 'replacement', '$0', 'c1', 'index', 'bi'])
+        var.registers(['bi', '$0', 'index', 'c2', 'replacement', 'c1'])
         var.put('replacement', var.get('replacements').get(var.get('$0').callprop('toLowerCase')))
         if var.get('replacement').get('bi'):
             var.put('bi', (Js('mp') if (var.get('greekSet').get(var.get('text').callprop('charAt', (var.get('index')-Js(1.0))).callprop('toLowerCase')) and var.get('greekSet').get(var.get('text').callprop('charAt', (var.get('index')+Js(2.0))).callprop('toLowerCase'))) else Js('b')))
@@ -101,4 +101,4 @@ pass
 
 
 # Add lib to the module scope
-toGreeklish = var.to_python()
+greek_to_greeklish = var.to_python()

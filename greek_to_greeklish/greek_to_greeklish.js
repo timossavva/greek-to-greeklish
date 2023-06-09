@@ -27,15 +27,12 @@ function toGreeklish(text) {
             {greek: 'χ', greeklish: 'ch'},
             {greek: 'ψ', greeklish: 'ps'},
         ];
-
     // Remove extraneous array element
     if (!replacements[replacements.length - 1]) replacements.pop();
-
     // Enhance replacements
     for (let i = 0, replacement; replacement = replacements[i]; i++) {
         replacements[replacement.greek] = replacement;
     }
-
     // Append single letter replacements
     let grLetters = 'αάβγδεέζηήθιίϊΐκλμνξοόπρσςτυύϋΰφχψωώ',
         engLetters = 'aavgdeezii.iiiiklmnxooprsstyyyyf..oo';
@@ -50,7 +47,6 @@ function toGreeklish(text) {
         replacements[replacement.greek] = replacement;
         expression[i] = replacement.greek;
     }
-
     expression = new RegExp(expression.join('|'), 'gi');
     // Replace greek with greeklish.
     let greekSet = stringToSet(grLetters),
